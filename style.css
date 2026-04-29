@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  max-height: 100vh;
+}
+
+:root {
+  --bg: #0b1120;
+  --panel: #121a2a;
+  --panel-2: #1b263b;
+  --border: #2e3c58;
+  --text: #ecf2ff;
+  --muted: #9fb0ca;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --success: #16a34a;
+  --success-hover: #15803d;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --radius: 18px;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #08101d 0%, #0f172a 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero,
+.card {
+  background: rgba(18, 26, 42, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 850px;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  background: rgba(37, 99, 235, 0.15);
+  color: #bfdbfe;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr 1fr;
+  gap: 18px;
+}
+
+.card {
+  padding: 18px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #0d1525;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+}
+
+textarea {
+  min-height: 220px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s ease;
+}
+
+button.primary {
+  background: var(--accent);
+}
+
+button.primary:hover {
+  background: var(--accent-hover);
+}
+
+button.secondary {
+  background: #000916;
+}
+
+button.secondary:hover {
+  background: #475569;
+}
+
+button.secondary-clear {
+  background: #1c7202;
+}
+
+button.secondary-clear:hover {
+  background: #e0e7d9;
+}
+
+button.success {
+  background: var(--success);
+}
+
+button.success:hover {
+  background: var(--success-hover);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button.danger:hover {
+  background: var(--danger-hover);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.template-list {
+  display: grid;
+  gap: 10px;
+  max-height: 620px;
+  overflow: auto;
+}
+
+.template-item {
+  width: 100%;
+  text-align: left;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.template-item:hover {
+  border-color: var(--accent);
+}
+
+.template-item.active {
+  border-color: var(--accent);
+  background: #22304a;
+}
+
+.template-item strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.template-item span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.response-box {
+  min-height: 280px;
+  white-space: pre-wrap;
+  border: 1px solid var(--border);
+  background: #0d1525;
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

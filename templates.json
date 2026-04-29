@@ -1,0 +1,226 @@
+[
+  {
+    "id": "limpeza-cache",
+    "title": "Limpeza de cache",
+    "category": "Sistema",
+    "keywords": [
+      "cache",
+      "erro visual",
+      "não atualiza",
+      "bug interface"
+    ],
+    "content": "Bom dia, prezado(a)!\n\nRealizamos a validação e, no momento, o sistema está funcionando normalmente.\n\nCaso o comportamento persista, orientamos realizar os seguintes procedimentos:\n\n- Limpar o cache do navegador;\n- Efetuar logout da conta;\n- Realizar o login novamente.\n\nComo não foi identificado erro sistêmico, estaremos finalizando o ticket.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "encerramento-sem-info",
+    "title": "Encerramento por falta de informações",
+    "category": "Atendimento",
+    "keywords": [
+      "sem resposta",
+      "falta info",
+      "sem dados",
+      "ticket parado"
+    ],
+    "content": "Bom dia/Boa tarde, prezado(a)!\n\nEncerramos o ticket devido à ausência das informações necessárias (ID, CNPJ, evidências ou retorno), o que impossibilitou a continuidade do atendimento.\n\nCaso ainda necessite de suporte, pedimos que reabra o chamado com as informações completas para que possamos dar andamento.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "analise-viabilidade",
+    "title": "Análise de viabilidade",
+    "category": "Melhoria",
+    "keywords": [
+      "melhoria",
+      "feature",
+      "viabilidade",
+      "solicitação cliente"
+    ],
+    "content": "Boa tarde, prezado(a)!\n\nSua solicitação será analisada pela equipe responsável para avaliação de viabilidade.\n\nCaso a demanda tenha sido solicitada por cliente, pedimos que informe o ID e o CNPJ, além de detalhar o motivo da solicitação e os impactos observados.\n\nRetornaremos assim que houver posicionamento.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "melhoria-avaliacao",
+    "title": "Melhoria em avaliação",
+    "category": "Melhoria",
+    "keywords": [
+      "caderno negócio",
+      "avaliação",
+      "comitê",
+      "feature"
+    ],
+    "content": "Boa tarde, prezado(a)!\n\nA solicitação de melhoria foi encaminhada para avaliação do comitê responsável.\n\nAssim que houver retorno, informaremos por meio deste ticket.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "solicitacao-analise",
+    "title": "Solicitação em análise",
+    "category": "Atendimento",
+    "keywords": [
+      "em análise",
+      "aguardando",
+      "verificação"
+    ],
+    "content": "Bom dia/Boa tarde, prezado(a)!\n\nSua solicitação está em análise. Assim que tivermos um posicionamento, retornaremos por este ticket.\n\nAgradecemos o contato.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "solicitacao-sem-dados",
+    "title": "Solicitação sem ID ou CNPJ",
+    "category": "Atendimento",
+    "keywords": [
+      "sem cnpj",
+      "sem id",
+      "dados faltando"
+    ],
+    "content": "Bom dia/Boa tarde, prezado(a)!\n\nPara darmos continuidade ao atendimento, poderia informar o ID do cliente ou o CNPJ?\n\nFicamos no aguardo.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "aguardando-deploy",
+    "title": "Aguardando deploy",
+    "category": "Sistema",
+    "keywords": [
+      "deploy",
+      "produção",
+      "liberação"
+    ],
+    "content": "Bom dia, prezado(a)!\n\nA solicitação foi aprovada e está aguardando o próximo deploy para disponibilização em produção.\n\nDessa forma, estaremos finalizando o ticket.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "erro-categoria",
+    "title": "Ticket aberto incorretamente",
+    "category": "Atendimento",
+    "keywords": [
+      "categoria errada",
+      "aberto errado"
+    ],
+    "content": "Boa tarde, prezado(a)!\n\nIdentificamos que o ticket foi aberto com a categoria incorreta.\n\nPara que possamos dar continuidade ao atendimento, pedimos que seja aberto um novo chamado com as informações corretas.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "isca-expirada",
+    "title": "Expiração de isca",
+    "category": "Sistema",
+    "keywords": [
+      "isca",
+      "expiração",
+      "validade"
+    ],
+    "content": "Boa tarde, prezado(a)!\n\nAs iscas possuem data de expiração registrada no sistema, podendo ser ajustada diretamente no Shownet, caso necessário.\n\nCaso não seja possível realizar a alteração, orientamos entrar em contato com o suporte N1, N2 ou N3 para verificação.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "sem-permissao-desbloqueio",
+    "title": "Desbloqueio de usuário",
+    "category": "Permissão",
+    "keywords": [
+      "bloqueado",
+      "desbloqueio",
+      "financeiro"
+    ],
+    "content": "Bom dia, prezado(a)!\n\nA equipe Gestor não possui permissão para realizar o desbloqueio de usuários, pois a ação pode estar relacionada a questões financeiras.\n\nOrientamos encaminhar o chamado para a equipe N1, responsável por essa verificação.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "sem-permissao-alteracao",
+    "title": "Alteração de cadastro",
+    "category": "Permissão",
+    "keywords": [
+      "alterar cadastro",
+      "sem permissão"
+    ],
+    "content": "Boa tarde, prezado(a)!\n\nA equipe Gestor não possui permissão para realizar alterações cadastrais.\n\nDessa forma, o chamado deve ser direcionado à equipe responsável (N1) para continuidade.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "contrato-duplicado",
+    "title": "Contratos duplicados CRM",
+    "category": "CRM",
+    "keywords": [
+      "contrato duplicado",
+      "crm",
+      "placa"
+    ],
+    "content": "Bom dia, prezado(a)!\n\nRealizamos a verificação dos contratos vinculados à placa informada. E existe mais de um contrato ativo para essa placa.\n\nComo não se trata de uma tratativa da equipe Gestor, solicitamos que a correção seja realizada junto à equipe responsável pelo CRM.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "novo-ticket",
+    "title": "Solicitação de novo ticket",
+    "category": "Atendimento",
+    "keywords": [
+      "novo chamado",
+      "novo ticket"
+    ],
+    "content": "Como o chamado já foi concluído, pedimos que seja aberto um novo ticket para novas solicitações.\n\nDessa forma, conseguimos manter um histórico mais organizado e preciso.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "agradecimento-id-cnpj",
+    "title": "Agradecimento envio ID e CNPJ",
+    "category": "Atendimento",
+    "keywords": [
+      "recebido id",
+      "recebido cnpj",
+      "dados enviados",
+      "prosseguir atendimento"
+    ],
+    "content": "Bom dia/Boa tarde, prezados!\n\nEsperamos que estejam bem.\n\nAgradecemos pelo envio do ID e do CNPJ. Com essas informações, daremos continuidade ao atendimento para que possamos auxiliá-los da melhor forma possível.\n\nSeguimos à disposição para quaisquer dúvidas ou necessidades adicionais.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "agradecimento-cnpj",
+    "title": "Agradecimento envio CNPJ",
+    "category": "Atendimento",
+    "keywords": [
+      "recebido cnpj",
+      "dados enviados",
+      "prosseguir atendimento"
+    ],
+    "content": "Bom dia/Boa tarde, prezados!\n\nEsperamos que estejam bem.\n\nAgradecemos pelo envio do CNPJ. Com essa informação, daremos continuidade ao atendimento para que possamos auxiliá-los da melhor forma possível.\n\nSeguimos à disposição para quaisquer dúvidas ou necessidades adicionais.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "contrato-correcao-placa",
+    "title": "Correção de contratos vinculados à placa",
+    "category": "CRM",
+    "keywords": [
+      "contrato placa",
+      "corrigir contrato",
+      "crm",
+      "placa divergente"
+    ],
+    "content": "Prezados,\n\nRealizamos a verificação dos contratos vinculados à placa informada. Como não se trata de uma tratativa diretamente relacionada à equipe Gestor, solicitamos, por gentileza, que seja realizada a correção dos contratos referentes à respectiva placa junto à equipe responsável.\n\nConforme evidenciado, segue a situação atual dos contratos.\n\nFicamos à disposição para quaisquer dúvidas ou necessidades adicionais.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "download-midias-gateway",
+    "title": "Download de mídias via novo gateway",
+    "category": "Sistema",
+    "keywords": [
+      "download midia",
+      "gateway novo",
+      "placa não aparece",
+      "filtro midia"
+    ],
+    "content": "Prezados,\n\nVerificamos que, para que as placas sejam exibidas nesse filtro específico, seria necessário utilizar o gateway antigo. Como o download de mídias está sendo realizado por meio do novo gateway, a visualização das placas ocorre apenas na opção “Download de mídia por intervalo”, onde é possível localizar a placa solicitada e as demais vinculadas ao cliente.\n\nDessa forma, estaremos finalizando o chamado.\n\nFicamos à disposição para quaisquer dúvidas ou necessidades adicionais.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "284f9940-888e-4781-9d60-938fedc0c853",
+    "title": "Retirada de placa da Grid",
+    "category": "Sistema",
+    "keywords": [
+      "Retirada de placa",
+      "placa duplicada",
+      "serie duplicada",
+      "exclusão da serie antiga"
+    ],
+    "content": "Informamos que a placa da grid foi devidamente retirada e o status da solicitação já se encontra atualizado.\n\nCaso o problema persista, orientamos que sejam realizados os seguintes procedimentos:\n\n- Limpar o cache do navegador;\n- Efetuar o logout da conta;\n- Realizar o login novamente.\n\nPermanecemos à disposição para quaisquer dúvidas ou necessidades adicionais.\n\nAtenciosamente,\nEquipe Gestor"
+  },
+  {
+    "id": "afb3bad5-4760-4ca2-aeb9-44db5f803ae6",
+    "title": "Correção do card",
+    "category": "Sistema",
+    "keywords": [
+      "Correção do sistema",
+      "disponivel em produção",
+      "corrigido e esperando deploy"
+    ],
+    "content": "Informamos que a correção solicitada foi realizada e está disponível em produção."
+  },
+  {
+    "id": "c977bc49-1dae-4e62-94e2-e5ebdbc80954",
+    "title": "Videowall",
+    "category": "Sistema",
+    "keywords": [
+      "videowall",
+      "Erro acesso videowall"
+    ],
+    "content": "Informamos que foi realizada uma tratativa no videowall, limitando a exibição a no máximo 10 minutos, devido ao alto consumo de dados e impacto na performance.\nApós esse período, será necessário solicitar novamente a exibição das câmeras.\nDessa forma, estaremos finalizando o ticket."
+  }
+]

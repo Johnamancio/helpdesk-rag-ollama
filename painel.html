@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helpdesk com IA</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <span class="badge">RAG em JSON • Ollama • CRUD local</span>
+      <h1>Helpdesk com IA</h1>
+      <p>
+        Gerencie templates, escolha os mais relevantes com RAG e gere respostas
+        mais úteis para os tickets.
+      </p>
+    </section>
+
+    <section class="layout">
+      <aside class="card">
+        <div class="section-header">
+          <h2>Templates</h2>
+          <button class="primary" onclick="novo()">Novo</button>
+        </div>
+
+        <div id="lista" class="template-list"></div>
+      </aside>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Editor</h2>
+        </div>
+
+        <div class="field">
+          <label for="title">Título</label>
+          <input id="title" placeholder="Ex.: Equipamento offline" />
+        </div>
+
+        <div class="field">
+          <label for="category">Categoria</label>
+          <input id="category" placeholder="Ex.: Equipamento" />
+        </div>
+
+        <div class="field">
+          <label for="keywords">Palavras-chave</label>
+          <input id="keywords" placeholder="Ex.: offline, sem comunicação, sem sinal" />
+        </div>
+
+        <div class="field">
+          <label for="content">Conteúdo</label>
+          <textarea id="content" placeholder="Digite o template aqui"></textarea>
+        </div>
+
+        <div class="button-row">
+          <button class="success" onclick="salvar()">Salvar</button>
+          <button class="danger" onclick="excluir()">Excluir</button>
+          <button class="secondary" onclick="copiarConteudo()">Copy</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Ticket</h2>
+        </div>
+
+        <div class="field">
+          <label for="ticket">Texto do ticket</label>
+          <textarea id="ticket" placeholder="Descreva aqui o ticket para gerar a resposta"></textarea>
+        </div>
+
+        <div class="button-row">
+          <button class="primary" onclick="gerar()">Gerar resposta</button>
+          <button class="secondary" onclick="copiarResposta()">Copy</button>
+          <button class="secondary-clear" onclick="limparResposta()">Clear</button>
+        </div>
+
+        <div class="field">
+          <label>Resposta gerada</label>
+          <pre id="resposta" class="response-box">A resposta vai aparecer aqui.</pre>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
