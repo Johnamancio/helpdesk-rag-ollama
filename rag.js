@@ -145,7 +145,13 @@ export async function findBestTemplates(ticketText) {
 }
 
 function getSaudacao() {
-  const hora = new Date().getHours();
+         const hora = Number(
+          new Date().toLocaleTimeString('pt-BR', { 
+            hour: 'numeric',
+            hour12: false,
+            timeZone: 'America/Sao_Paulo' 
+        })
+      );
 
   if (hora < 12) return 'Bom dia, prezado!';
   if (hora < 18) return 'Boa tarde, prezado!';
