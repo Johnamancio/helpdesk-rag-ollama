@@ -7,7 +7,7 @@ const GENERATION_MODEL = process.env.OLLAMA_GENERATE_MODEL || 'gemma3';
 const MODEL_KEEP_ALIVE = process.env.OLLAMA_KEEP_ALIVE || '30m';
 const RESPONSE_MAX_TOKENS = Number(process.env.OLLAMA_NUM_PREDICT || 220);
 const RESPONSE_TEMPERATURE = Number(process.env.OLLAMA_TEMPERATURE || 0.2);
-const RESPONSE_TOP_K = Number(process.env.RAG_TOP_K || 3);
+const RESPONSE_TOP_K = Number(process.env.RAG_TOP_K || 2);
 
 const templatesCache = {
   path: 'templates.json',

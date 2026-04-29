@@ -13,9 +13,9 @@ services:
       TZ: America/Sao_Paulo
       OLLAMA_URL: http://ollama:11434
       OLLAMA_KEEP_ALIVE: 30m
-      OLLAMA_NUM_PREDICT: 220
+      OLLAMA_NUM_PREDICT: 120
       OLLAMA_TEMPERATURE: 0.2
-      RAG_TOP_K: 3
+      RAG_TOP_K: 2
     volumes:
       - ./templates.json:/app/templates.json
       - ./templates-index.json:/app/templates-index.json
