@@ -123,17 +123,6 @@
     "content": "Boa tarde, prezado(a)!\n\nA equipe Gestor não possui permissão para realizar alterações cadastrais.\n\nDessa forma, o chamado deve ser direcionado à equipe responsável (N1) para continuidade.\n\nAtenciosamente,\nEquipe Gestor"
   },
   {
-    "id": "contrato-duplicado",
-    "title": "Contratos duplicados CRM",
-    "category": "CRM",
-    "keywords": [
-      "contrato duplicado",
-      "crm",
-      "placa"
-    ],
-    "content": "Bom dia, prezado(a)!\n\nRealizamos a verificação dos contratos vinculados à placa informada. E existe mais de um contrato ativo para essa placa.\n\nComo não se trata de uma tratativa da equipe Gestor, solicitamos que a correção seja realizada junto à equipe responsável pelo CRM.\n\nAtenciosamente,\nEquipe Gestor"
-  },
-  {
     "id": "novo-ticket",
     "title": "Solicitação de novo ticket",
     "category": "Atendimento",
