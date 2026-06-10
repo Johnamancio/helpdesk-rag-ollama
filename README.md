@@ -7,6 +7,7 @@ O projeto permite:
 - indexar os templates com embeddings
 - buscar os templates mais relevantes para um ticket
 - gerar uma resposta automatizada com base no contexto encontrado
+- responder em modo agente por template, sem LLM gerador, para reduzir latencia e alucinacao
 
 ## Como funciona
 
@@ -15,8 +16,8 @@ O fluxo da aplicacao e este:
 1. O painel web envia o texto do ticket para a API.
 2. A API gera o embedding do ticket no Ollama.
 3. O sistema compara esse embedding com os embeddings dos templates salvos.
-4. Os templates mais relevantes sao enviados para o modelo gerador.
-5. O Ollama devolve uma resposta pronta para atendimento.
+4. O agente monta a resposta com base no template mais confiavel e nos dados extraidos do ticket.
+5. Se `RAG_USE_LLM=true`, os templates mais relevantes sao enviados ao modelo gerador para reescrita controlada.
 
 ## Stack
 
@@ -104,7 +105,11 @@ OLLAMA_KEEP_ALIVE=30m
 OLLAMA_NUM_PREDICT=220
 OLLAMA_TEMPERATURE=0.2
 RAG_TOP_K=3
+RAG_MIN_SCORE=0.35
+RAG_USE_LLM=false
 ```
+
+`RAG_USE_LLM=false` e o modo recomendado para respostas mais rapidas e menos inventivas. Nesse modo, o Ollama ainda e usado para embeddings, mas a resposta final e montada a partir do template escolhido.
 
 ## Containers e volumes
 
@@ -136,6 +141,8 @@ Alguns ajustes ja aplicados no projeto:
 - warmup dos modelos no startup
 - `keep_alive` para reduzir latencia entre chamadas
 - reindexacao com embeddings em lote
+- modo agente por template, que evita chamar o modelo gerador por padrao
+- limite minimo de confianca (`RAG_MIN_SCORE`) antes de responder automaticamente
 
 Se ainda estiver lento:
 

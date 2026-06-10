@@ -105,11 +105,14 @@ app.post('/api/respond', async (req, res) => {
     }
 
     const templates = await findBestTemplates(ticket);
-    const response = await generateResponse(ticket, templates);
+    const result = await generateResponse(ticket, templates);
 
     res.json({
-      response,
+      response: result.response,
       templates,
+      confidence: result.confidence,
+      usedLlm: result.usedLlm,
+      extractedInfo: result.infoExtraida,
       elapsedMs: Date.now() - startedAt
     });
   } catch (error) {

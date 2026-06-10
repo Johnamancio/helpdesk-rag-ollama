@@ -204,12 +204,33 @@
   },
   {
     "id": "c977bc49-1dae-4e62-94e2-e5ebdbc80954",
-    "title": "Videowall",
+    "title": "Tempo da Videowall",
     "category": "Sistema",
     "keywords": [
-      "videowall",
-      "Erro acesso videowall"
+      "videowall tempo",
+      "Erro no tempo da videowall"
     ],
     "content": "Informamos que foi realizada uma tratativa no videowall, limitando a exibição a no máximo 10 minutos, devido ao alto consumo de dados e impacto na performance.\nApós esse período, será necessário solicitar novamente a exibição das câmeras.\nDessa forma, estaremos finalizando o ticket."
+  },
+  {
+    "id": "6fee5d63-9687-42df-9a6a-7cf4d6e4f176",
+    "title": "Troca de usuário pra Master",
+    "category": "Sistema",
+    "keywords": [
+      "Master",
+      "Trocar de usuário",
+      "perfil Master"
+    ],
+    "content": "Informamos que foi realizada a troca do perfil para Master.\n\nAtenciosamente, Equipe Gestor."
+  },
+  {
+    "id": "04228d16-3a43-4989-ae0e-6f14e7cb0067",
+    "title": "Videowall sem aparecer veículos",
+    "category": "Sistema",
+    "keywords": [
+      "Videowall",
+      "sem aparecer veiculos no videowall."
+    ],
+    "content": "Informamos que foi realizada uma análise e efetuada a tratativa necessária para correção da situação reportada. Após os ajustes realizados, o VideoWall foi normalizado e encontra-se funcionando conforme o esperado.\n\nSolicitamos, por gentileza, que realize uma nova validação. Caso identifique qualquer comportamento divergente, permanecemos à disposição para auxiliá-lo."
   }
 ]

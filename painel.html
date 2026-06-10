@@ -3,86 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helpdesk com IA</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Helpdesk AI Agent</title>
+  <link rel="stylesheet" href="style.css?v=10"/>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <span class="badge">RAG em JSON • Ollama • CRUD local</span>
-      <h1>Helpdesk com IA</h1>
-      <p>
-        Gerencie templates, escolha os mais relevantes com RAG e gere respostas
-        mais úteis para os tickets.
-      </p>
-    </section>
+  <!-- Sidebar de Templates -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>Templates</h2>
+      <button class="btn-icon" onclick="toggleSidebar()" title="Fechar">✕</button>
+    </div>
 
-    <section class="layout">
-      <aside class="card">
-        <div class="section-header">
-          <h2>Templates</h2>
-          <button class="primary" onclick="novo()">Novo</button>
+    <div class="sidebar-actions">
+      <button class="btn-sm btn-primary" onclick="novoTemplate()">+ Novo template</button>
+    </div>
+
+    <div id="lista" class="template-list"></div>
+
+    <!-- Editor de Template -->
+    <div id="editor" class="template-editor hidden">
+      <div class="editor-header">
+        <h3 id="editorTitle">Novo template</h3>
+        <button class="btn-icon" onclick="fecharEditor()">✕</button>
+      </div>
+
+      <div class="field">
+        <label for="title">Título</label>
+        <input id="title" placeholder="Ex.: Equipamento offline" />
+      </div>
+
+      <div class="field">
+        <label for="category">Categoria</label>
+        <input id="category" placeholder="Ex.: Equipamento" />
+      </div>
+
+      <div class="field">
+        <label for="keywords">Palavras-chave</label>
+        <input id="keywords" placeholder="Ex.: offline, sem comunicação" />
+      </div>
+
+      <div class="field">
+        <label for="content">Conteúdo</label>
+        <textarea id="content" rows="8" placeholder="Digite o template aqui..."></textarea>
+      </div>
+
+      <div class="editor-actions">
+        <button class="btn-sm btn-success" onclick="salvar()">Salvar</button>
+        <button class="btn-sm btn-danger" onclick="excluir()">Excluir</button>
+        <button class="btn-sm btn-secondary" onclick="fecharEditor()">Cancelar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay para mobile -->
+  <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Chat principal -->
+  <main class="chat-container">
+    <header class="chat-header">
+      <div class="header-left">
+        <button class="btn-icon" onclick="toggleSidebar()" title="Templates">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+        <div class="header-brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/>
+              <path d="M10 21h4"/>
+              <path d="M12 18v3"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Helpdesk AI Agent</h1>
+            <span class="header-subtitle">Especialista em padrões de resposta e resolução de tickets</span>
+          </div>
         </div>
+      </div>
+      <div class="header-right">
+        <button class="btn-sm btn-ghost" onclick="limparChat()" title="Nova conversa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          Nova conversa
+        </button>
+      </div>
+    </header>
 
-        <div id="lista" class="template-list"></div>
-      </aside>
-
-      <section class="card">
-        <div class="section-header">
-          <h2>Editor</h2>
+    <div id="chatMessages" class="chat-messages">
+      <div class="welcome-screen">
+        <div class="welcome-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/>
+            <path d="M10 21h4"/>
+            <path d="M12 18v3"/>
+          </svg>
         </div>
-
-        <div class="field">
-          <label for="title">Título</label>
-          <input id="title" placeholder="Ex.: Equipamento offline" />
+        <h2>Olá! Sou o Agente Helpdesk</h2>
+        <p>Cole o texto do ticket abaixo e eu vou gerar a melhor resposta com base nos templates cadastrados.</p>
+        <div class="welcome-chips">
+          <button class="chip" onclick="inserirExemplo('Cliente relata que o sistema não atualiza as informações após login.')">Sistema não atualiza</button>
+          <button class="chip" onclick="inserirExemplo('Solicitação de melhoria no módulo de relatórios. CNPJ: 12.345.678/0001-90')">Solicitação de melhoria</button>
+          <button class="chip" onclick="inserirExemplo('Ticket sem resposta há 5 dias, cliente não enviou dados solicitados.')">Ticket sem resposta</button>
         </div>
+      </div>
+    </div>
 
-        <div class="field">
-          <label for="category">Categoria</label>
-          <input id="category" placeholder="Ex.: Equipamento" />
-        </div>
+    <div class="chat-input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="ticketInput"
+          placeholder="Cole o texto do ticket aqui..."
+          rows="1"
+          onkeydown="handleKeyDown(event)"
+          oninput="autoResize(this)"
+        ></textarea>
+        <button id="sendBtn" class="btn-send" onclick="enviarMensagem()" title="Enviar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13"/>
+            <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+          </svg>
+        </button>
+      </div>
+      <span class="input-hint">Enter para enviar · Shift+Enter para nova linha</span>
+    </div>
+  </main>
 
-        <div class="field">
-          <label for="keywords">Palavras-chave</label>
-          <input id="keywords" placeholder="Ex.: offline, sem comunicação, sem sinal" />
-        </div>
-
-        <div class="field">
-          <label for="content">Conteúdo</label>
-          <textarea id="content" placeholder="Digite o template aqui"></textarea>
-        </div>
-
-        <div class="button-row">
-          <button class="success" onclick="salvar()">Salvar</button>
-          <button class="danger" onclick="excluir()">Excluir</button>
-          <button class="secondary" onclick="copiarConteudo()">Copy</button>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-header">
-          <h2>Ticket</h2>
-        </div>
-
-        <div class="field">
-          <label for="ticket">Texto do ticket</label>
-          <textarea id="ticket" placeholder="Descreva aqui o ticket para gerar a resposta"></textarea>
-        </div>
-
-        <div class="button-row">
-          <button class="primary" onclick="gerar()">Gerar resposta</button>
-          <button class="secondary" onclick="copiarResposta()">Copy</button>
-          <button class="secondary-clear" onclick="limparResposta()">Clear</button>
-        </div>
-
-        <div class="field">
-          <label>Resposta gerada</label>
-          <pre id="resposta" class="response-box">A resposta vai aparecer aqui.</pre>
-        </div>
-      </section>
-    </section>
-  </div>
-
-  <script src="./app.js"></script>
+  <script src="./app.js?v=10"></script>
 </body>
 </html>
